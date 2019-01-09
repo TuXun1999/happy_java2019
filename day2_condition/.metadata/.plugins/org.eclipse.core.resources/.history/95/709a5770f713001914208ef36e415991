@@ -1,0 +1,84 @@
+package condition;
+
+import java.awt.print.Book;
+
+public class boolen_test {
+	public static void main(String[] args){
+		//Part I: boolen macro?
+		int a = 12;
+		int b = 3;
+		
+		String sup = 
+		(a < b) ? "smaller": (a > b) ? "bigger" : "equal";
+		/*
+		 * if a < b, sup = "smaller"
+		 * else if a > b, sup = "bigger"
+		 * else, sup = "equal"
+		 */
+		System.out.println(sup);
+		
+		double a1 = 3.5;
+		double b1 = 3.5;
+		String sup1 = 
+		(a1 == b1) ? "equal" : (a1 > b1) ? "bigger" : "smaller";
+		System.out.println(sup1);
+		
+		
+		//Part II: ex: leap year
+		int year = Integer.parseInt(args[0]);
+		boolean isleapyear =  //Standard form of naming
+		(year % 400 == 0) ? true : 
+			(year % 4 == 0 && year % 100 != 0) ? true : false;
+		System.out.println("The tested year: " + args[0]);
+		System.out.println("It's a leap year?");
+		System.out.println(isleapyear);
+		/*
+		 * another method:
+		 * boolean isleapyear = year % 4 == 0 && year % 100 != 0
+		 * isleapyear = isleapyear || year % 400 ==0
+		 * 
+		 * this is more creative !!
+		 * 
+		 */
+		
+		
+		//Part III: absolute value
+		double x = Double.parseDouble(args[1]);
+		double abs_x = (x > 0.0) ? x : -x;
+		System.out.println(
+				"Number: " + x + "   " + "Abs: " + abs_x);
+		/*
+		 * Or in a more intuitive way...
+		 * if (x > 0){
+		 * abs_x = x;
+		 * }
+		 * else
+		 * abs_x= -x;
+		 */
+		
+		//Part IV: swap (easiest way is to use a tmp container)
+		double s = Double.parseDouble(args[2]);
+		double t = Double.parseDouble(args[3]);
+		if (s < t){
+			s = s + t;
+			t = s - t;
+			s = s - t;
+		}
+		System.out.println("The two numbers: " + s + " " + t);
+		/*
+		 * x = Double.parseDouble(args)
+		 * y = Double.parseDouble(args)
+		 * (x > y)? pass: (x = x + y; y = x -y; x = x-y;)
+		 */
+		
+		//Part V: a little ex
+		int x0 = Integer.parseInt(args[4]);
+		if ( x0 > 10000){
+			System.exit(1);
+		}
+		else{
+			System.out.println(x0 * x0);
+		}
+		
+	}
+}

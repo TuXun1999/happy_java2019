@@ -92,72 +92,7 @@ public class boolen_test {
 		 */
 		
 		//Part VII: a number divided by 3..?
-		int num = 8;
+		int num = 6;
 		System.out.println((num%3 == 0)? true: false);
-		/*
-		 * Or, use if-else way...though more complicated
-		 */
-		
-		//Part VIII: sign of a number
-		double check_num = -4;
-		if (check_num > 0)
-			System.out.println("It is positive");
-		else if (check_num == 0)
-			System.out.println("It is equal to zero");
-		else
-			System.out.println("It is larger negative");
-		/*
-		 * A faster way is to :
-		 * System.out.println(
-		 * (check_num > 0) ? "Positive" : 
-		 * (check_num < 0)? "Negative" : 
-		 * "Zero"
-		 * )
-		 */
-		
-		//Part X: check the number in an interval
-		int check_numX = Integer.parseInt(args[5]);
-		if (check_numX >= 0 && check_numX <= 5){
-			System.out.println(
-				check_numX + " is within the range [0,5]");
-			if (check_numX == 1)
-				System.out.println("Your number is one");
-			//similar for other numbers...
-		}
-		else
-			System.out.println(
-					check_numX + " is beyond the range [0, 5]");
-		/*
-		 * A faster way to go:
-		 * System.out.println((
-		 * check_numX >=0 && check_numX <= 5) ? "Yes" : "No")
-		 */
-		
-		
-		//Part XI: compute your tax 
-		int income = Integer.parseInt(args[6]);
-		if (income <= 47449)
-			System.out.println(
-				"Your tax is: " + income*0.22	
-					);
-		else if (income <= 114650)
-			System.out.println(
-				"Your tax is: " + income * 0.25
-				);
-		else if (income <= 174700)
-			System.out.println(
-					"Your tax is: " + income*0.28	
-						);
-		else if (income <= 311950)
-			System.out.println(
-					"Your tax is: " + income*0.33	
-						);
-		else 
-			System.out.println(
-					"Your tax is: " + income*0.35	
-						);
-					
-			
-				
 	}
 }
