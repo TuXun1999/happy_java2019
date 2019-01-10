@@ -1,0 +1,11 @@
+package loop;
+
+public class test_loop {
+	public static void main(String[] args){
+		int num = 10;
+		while (num<= 50){
+			System.out.println("Number: " + num);
+			num ++;
+		}
+	}
+}

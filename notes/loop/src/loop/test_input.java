@@ -1,0 +1,11 @@
+package loop;
+import java.util.Scanner;
+public class test_input {
+	public static void main(String[] args){
+	Scanner user_input = new Scanner( System.in );
+	String first_name;
+	System.out.print("Enter your first name: ");
+	first_name = user_input.next( );
+	System.out.println("You are " + first_name);
+}
+}
