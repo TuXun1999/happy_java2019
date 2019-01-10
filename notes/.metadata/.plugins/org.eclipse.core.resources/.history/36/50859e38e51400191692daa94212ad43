@@ -62,8 +62,6 @@ public class test_loop {
 					dots();
 				case "tower":
 					tower();
-				case "reverse":
-					reverse();
 				case "q":
 					leave = true;
 					break;
@@ -240,23 +238,11 @@ public class test_loop {
 		int rows = 12;
 		for (int i = 1; i<=rows; i++){
 			for (int j = 1; j <= i; j++){
-				System.out.print(j + " ");
+				System.out.print(j + "\t");
 				if (j == i){
 					System.out.println();
 				}
 			}
 		}
-	}
-	
-	
-	static void reverse(){
-		int num = 23467;
-		int result = 0;
-		do {
-			result = result * 10 + num%10;
-			num = (num -num%10)/10;
-		}
-		while (num>0);
-		System.out.println(result);
 	}
 }

@@ -58,12 +58,6 @@ public class test_loop {
 					list();
 				case "fibb":
 					fibb();
-				case "dots":
-					dots();
-				case "tower":
-					tower();
-				case "reverse":
-					reverse();
 				case "q":
 					leave = true;
 					break;
@@ -77,7 +71,6 @@ public class test_loop {
 		user_input.close();
 	}
 	
-	
 	static void list(int num){
 		while (num<= 50){
 			System.out.println("Number: " + num);
@@ -85,8 +78,6 @@ public class test_loop {
 		}
 		
 	}
-	
-	
 	static int power(int N){
 		int result = 1;
 		while (N > 0){
@@ -95,7 +86,6 @@ public class test_loop {
 		}
 		return result;
 	}
-	
 	
 	static int max_power(){
 		int result = 1;
@@ -108,8 +98,6 @@ public class test_loop {
 		user_input.close();
 		return result/2;
 	}
-	
-	
 	static double Newton_root(){
 		/*
 		 * This is how the function built inside mat library
@@ -124,10 +112,8 @@ public class test_loop {
 		while(Math.abs(t - N/t) >= precision){
 			t = (t + N/t)/2;
 		}
-		user_input.close();
 		return t;
 	}
-	
 	
 	static void test(){
 		/*
@@ -137,7 +123,6 @@ public class test_loop {
 			System.out.println(i);
 		}
 	}
-	
 	
 	static void sum(){
 		System.out.println("Input your number here: ");
@@ -149,9 +134,7 @@ public class test_loop {
 			sum += i;
 		}
 		System.out.println("Sum from 1 to N: " + sum);
-		user_input.close();
 	}
-	
 	
 	static void product(){
 		System.out.println("Input your number here: ");
@@ -163,9 +146,7 @@ public class test_loop {
 			product *= i;
 		}
 		System.out.println("Product from 1 to N: " + product);
-		user_input.close();
 	}
-	
 	
 	static void list(){
 		System.out.println("Input your number here: ");
@@ -180,7 +161,6 @@ public class test_loop {
 		user_input.close();
 	}
 	
-	
 	static void fibb(){
 		System.out.println("Input your number here: ");
 		Scanner user_input = new Scanner(System.in);
@@ -189,74 +169,18 @@ public class test_loop {
 		int a = 1;
 		int b = 1;
 		
-		for (int i = 0; i < N; i ++){
+		for (int i = 0; i < N + 1; i ++){
 			if (i == 0)
 				System.out.print(1 + " ");
+			else if (i == 1)
+				System.out.print(1 + " ");
 			else {
-				System.out.print(b);
+				System.out.print(a + b);
 				System.out.print(" ");
-				int tmp;
-				tmp = a;
+				int tmp = a;
 				a = b;
-				b = tmp + b; 
-				/*
-				 * A cool way to use only two variables:
-				 * b = 2*a + b
-				 * a = b - 2*a
-				 * b = b - (b-a)/2
-				 */
-				
-				/*
-				 * Another better method:
-				 * a = 0, b = 1
-				 * for (int i = 0; i< N + 1; i++){
-				 * print(b)
-				 * int tmp = a;
-				 * a = b;
-				 * b = tmp + b; 
-				 * }
-				 * 
-				 * 
-				 */
+				b = tmp + b;
 			}
 		}
-		user_input.close();
-	}
-	
-	static void dots(){
-		int rows = 8;
-		int columns = 16;
-		for (int i = 0; i<rows; i++){
-			for (int j = 0; j< columns; j++){
-				System.out.print("* ");
-				if (j == columns - 1){
-					System.out.print("\n");
-				}
-			}
-		}
-	}
-	
-	static void tower(){
-		int rows = 12;
-		for (int i = 1; i<=rows; i++){
-			for (int j = 1; j <= i; j++){
-				System.out.print(j + " ");
-				if (j == i){
-					System.out.println();
-				}
-			}
-		}
-	}
-	
-	
-	static void reverse(){
-		int num = 23467;
-		int result = 0;
-		do {
-			result = result * 10 + num%10;
-			num = (num -num%10)/10;
-		}
-		while (num>0);
-		System.out.println(result);
 	}
 }
