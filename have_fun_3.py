@@ -5,7 +5,7 @@ def poly_cal(y, items):
 	'''
 	result = 0;
 	for item in items:
-		result += item['cfft'] * pow(y, items['pwr'])
+		result += item['cfft'] * pow(y, item['pwr'])
 	return result
 
 
@@ -42,8 +42,11 @@ def get_cfft(item):
 		#return the part before the variable
 		if i == 0:
 			result = 1
+		elif i == 1:
+			result = int(item[0])
 		else:
 			result = float(item[:i-1])
+		
 		
 		return result
 		
@@ -70,9 +73,14 @@ for item in func_tmp:
 	#Store the data into the items
 	items.append(item_tmp)
 
+	
 #Correct the sign of each item
 	
 index = 0   #the index to change the sign of the specific item
+
+if func[0] != '-': #the coefficient of the first item won't be added with a '+'
+	index += 1
+	
 for char in func:
 	if char == '+':
 		index += 1
@@ -85,25 +93,25 @@ print('Input an interval [a, b] that f(a) * f(b) < 0')
 interval = raw_input('Input your interval here: ')
 
 interval = str(interval[1:-1])
-print(interval)
-inteval = interval.split(',')
+interval = interval.split(',')
 
 
 a = float(interval[0])
 b = float(interval[1])
 
 
-precision = raw_input('What is your intend precision? ')
+precision = float(raw_input('What is your intend precision? '))
 while True:
 	left = poly_cal(a, items)
 	right = poly_cal(b, items)
 	middle = poly_cal( (a + b)/2, items)
+	print(abs(middle))
 	if abs(middle) < precision:
 		break
 	elif middle *  right > 0:
 		b = (a + b)/2;
 	else:
-		a = (a + b)/2;
+		a = (a + b)/2;	
 		
 print('The zero is around ' + str((a+b)/2))
 		

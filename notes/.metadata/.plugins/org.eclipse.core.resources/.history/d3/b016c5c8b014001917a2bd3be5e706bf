@@ -1,0 +1,13 @@
+package condition;
+
+public class condition_2 {
+	public static void main(String[] args){
+		
+		//Part I: switch statement
+		String a = "hi";
+		String b = "hi";
+		System.out.println(a.equals(b));
+		
+	}
+
+}
