@@ -60,16 +60,28 @@ def tower():
 				row.append(numbers[i-2][j-1] + numbers[i-2][j])
 		numbers.append(row)
 	
+	string = ''
 	for i in range(1, rows+1):
-		for j in range(0, 2*rows - 1):
-			index = 0
-			if j < rows - i + 1 or j > rows + i -1:
-				print("\t"),
-			elif (j - (rows - i + 1)%2 ==0):
-				print(numbers[i-1][index]),
-				index += 1
-			elif (j - (rows - i + 1) %2 == 1):
-				print("\t"),
+		index = 0
+		for j in range(1, 4*rows - 2):
+			if j%2 == 0:
+				string += "\t"
+			else:
+				tmp = (j+1)/2
+				if tmp < rows - i + 1 or tmp > rows + i -1:
+					string += "\t"
+					if tmp == 2 * rows - 1:
+						string += "\n"
+				elif (tmp - (rows - i + 1))%2 ==0:
+					string += str(numbers[i-1][index])
+					index += 1
+				elif (tmp - (rows - i + 1))%2 ==1:
+					string += "\t"
+					
+
+		
+				
+	print(string)
 	print("Done")
 			
 choice = int(raw_input("Which exercise do you want to see?"))

@@ -311,7 +311,6 @@ public class test_loop {
 		for(int i = 1; i <= Math.sqrt(j); i++){
 			if (j%i == 0 && i>1){
 				result = false;
-				break;
 			}
 		}
 		return result;

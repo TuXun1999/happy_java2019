@@ -47,11 +47,6 @@ public class test_loop {
 					 * for (int i = 0; condition; step){}
 					 * Construct and use i only inside 
 					 * the "for" loop
-					 * 
-					 * if there is no condition inside 
-					 * the bracket, this is an infinite 
-					 * loop
-					 * 
 					 */
 					test();
 					break;
@@ -69,12 +64,6 @@ public class test_loop {
 					tower();
 				case "reverse":
 					reverse();
-				case "inf":
-					inf();
-				case "bits":
-					bits();
-				case "prime":
-					prime();
 				case "q":
 					leave = true;
 					break;
@@ -90,11 +79,10 @@ public class test_loop {
 	
 	
 	static void list(int num){
-		System.out.println("The even numbers are: ");
-		for (int i = 0; i < 52; i += 2){
-			System.out.print(i + " ");
+		while (num<= 50){
+			System.out.println("Number: " + num);
+			num ++;
 		}
-		System.out.println();
 		
 	}
 	
@@ -274,59 +262,5 @@ public class test_loop {
 		}
 		while (num>0);
 		System.out.println(result);
-	}
-	
-	
-	static void inf(){
-		System.out.println("Input your character here: ");
-		Scanner user_input = new Scanner(System.in);
-		char N = user_input.next().charAt(0);
-		char refer = 'R';
-		
-		while (N != refer){
-			System.out.println("Input again: ");
-			N = user_input.next().charAt(0);
-			
-		}
-		System.out.println("Done");
-		user_input.close();
-	}
-	static void bits(){
-		System.out.println("Input your number here: ");
-		Scanner user_input = new Scanner(System.in);
-		int N = user_input.nextInt();
-		String result = "";
-		
-		do{
-			result = (N%2) + result;
-			N = (N -N%2)/2;
-		}
-		while(N > 0);
-		
-		System.out.println("The binary form: " + result);
-		user_input.close();
-	}
-	static boolean isprime(int j){
-		boolean result = true;
-		for(int i = 1; i <= Math.sqrt(j); i++){
-			if (j%i == 0 && i>1){
-				result = false;
-				break;
-			}
-		}
-		return result;
-	}
-	static void prime(){
-		System.out.println("Input your integer here: ");
-		Scanner user_input = new Scanner(System.in);
-		int N = user_input.nextInt();
-		
-		System.out.println("The prime numbers less than " + N);
-		for(int i = 2; i<=N; i++){
-			if (isprime(i) == true){
-				System.out.print(i + " ");
-			}
-		}
-		user_input.close();
 	}
 }

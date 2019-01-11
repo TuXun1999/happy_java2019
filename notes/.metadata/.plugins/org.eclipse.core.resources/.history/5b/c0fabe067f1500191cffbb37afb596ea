@@ -73,8 +73,6 @@ public class test_loop {
 					inf();
 				case "bits":
 					bits();
-				case "prime":
-					prime();
 				case "q":
 					leave = true;
 					break;
@@ -298,35 +296,12 @@ public class test_loop {
 		String result = "";
 		
 		do{
-			result = (N%2) + result;
+			result += (N%2);
 			N = (N -N%2)/2;
 		}
 		while(N > 0);
 		
 		System.out.println("The binary form: " + result);
-		user_input.close();
-	}
-	static boolean isprime(int j){
-		boolean result = true;
-		for(int i = 1; i <= Math.sqrt(j); i++){
-			if (j%i == 0 && i>1){
-				result = false;
-				break;
-			}
-		}
-		return result;
-	}
-	static void prime(){
-		System.out.println("Input your integer here: ");
-		Scanner user_input = new Scanner(System.in);
-		int N = user_input.nextInt();
-		
-		System.out.println("The prime numbers less than " + N);
-		for(int i = 2; i<=N; i++){
-			if (isprime(i) == true){
-				System.out.print(i + " ");
-			}
-		}
 		user_input.close();
 	}
 }
