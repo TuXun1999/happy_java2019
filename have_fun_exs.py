@@ -76,13 +76,40 @@ def tower():
 					string += str(numbers[i-1][index])
 					index += 1
 				elif (tmp - (rows - i + 1))%2 ==1:
-					string += "\t"
-					
-
-		
-				
+					string += "\t"			
 	print(string)
 	print("Done")
+
+
+def list_overlap():
+	'''
+	for i in range(0, 20):
+		a.append(int(,math.random()*100)
+		b.append(int(math.random()*100)
+	'''
+	a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+	b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]  
+	
+	overlap = [item for item in a if (item in b)]
+	print(overlap)
+		
+def palindrome():
+	sample = raw_input("Your string here: ")
+	test = True
+	for i in range(0, len(sample)/2):
+		if sample[i] != sample[len(sample) - 1 - i]:
+			test = False
+			break
+	if test:
+		print("The string is palindrome")
+	else:
+		print("NO, it is not a palindrome")
+
+
+def list_even(test):
+	even = [a for a in test if a%2 ==  0]
+	print(even)
+	
 			
 choice = int(raw_input("Which exercise do you want to see?"))
 
@@ -97,6 +124,13 @@ elif (choice == 3):
     
 elif (choice == 4):
 	divisor()
+elif choice == 5:
+	list_overlap()
+elif (choice == 6):
+	palindrome()
+elif choice == 7:
+	test = [pow(i, 2) for i in range(1, 11)]
+	list_even(test)
 elif (choice == 37):
 	tower()
 

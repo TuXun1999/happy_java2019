@@ -57,27 +57,47 @@ public class test_loop {
 					break;
 				case "sum":
 					sum();
+					break;
 				case "product":
 					product();
+					break;
 				case "list2":
 					list();
+					break;
 				case "fibb":
 					fibb();
+					break;
 				case "dots":
 					dots();
+					break;
 				case "tower":
 					tower();
+					break;
 				case "reverse":
 					reverse();
+					break;
 				case "inf":
 					inf();
+					break;
 				case "bits":
 					bits();
+					break;
 				case "prime":
 					prime();
+					break;
+				case "factor":
+					factor(N);
+					break;
+				case "flips":
+					flips();
+					break;
+				case "factor2":
+					factor2(N);
+					break;
 				case "q":
 					leave = true;
 					break;
+				
 				default:	
 			}
 			if (leave)
@@ -235,6 +255,7 @@ public class test_loop {
 		user_input.close();
 	}
 	
+	
 	static void dots(){
 		int rows = 8;
 		int columns = 16;
@@ -247,6 +268,7 @@ public class test_loop {
 			}
 		}
 	}
+	
 	
 	static void tower(){
 		int rows = 12;
@@ -291,6 +313,9 @@ public class test_loop {
 		System.out.println("Done");
 		user_input.close();
 	}
+	
+	
+	
 	static void bits(){
 		System.out.println("Input your number here: ");
 		Scanner user_input = new Scanner(System.in);
@@ -306,6 +331,8 @@ public class test_loop {
 		System.out.println("The binary form: " + result);
 		user_input.close();
 	}
+	
+	
 	static boolean isprime(int j){
 		boolean result = true;
 		for(int i = 1; i <= Math.sqrt(j); i++){
@@ -316,6 +343,8 @@ public class test_loop {
 		}
 		return result;
 	}
+	
+	
 	static void prime(){
 		System.out.println("Input your integer here: ");
 		Scanner user_input = new Scanner(System.in);
@@ -329,4 +358,79 @@ public class test_loop {
 		}
 		user_input.close();
 	}
+	
+	static int get_power(int N, int i) {
+		int j = 0;
+		int power;
+		while (true){
+			power = (int) Math.pow(i, j);
+			if (N%power == 0) {
+				j++;
+				continue;
+			}
+			else
+				break;
+		}
+		return (j-1);
+	}
+	
+	
+	static void factor(int N) {
+		String product = "";
+		for (int i = 2; i<= N/2; i++) {
+			if (N%i == 0 && isprime(i) == true) {
+				//Find the factors of N as well as its power
+				int m = get_power(N, i);
+				product += i;
+				if(m > 1) {
+					product += "^";
+					product += m;
+				}
+				product += "*";	
+			}
+		}
+		String result = "";
+		System.out.println("The standard form of factorizatoin: ");
+		for (int j = 0; j< product.length()-1; j++) {
+			result += product.charAt(j);
+		}
+		System.out.println(result);
+	}
+	
+	
+	static void flips() {
+		double high = 50.0;
+		double low = 0.0;
+		double init = 25.0;
+		double flip;
+		int times = 0;
+		
+		
+		while (init >= low && init <= high) {
+			flip = Math.random();
+			if (flip >= 0.5) {
+				init += 0.7;
+			}
+			else
+				init -= 0.7;
+			
+			times++;
+		}
+		System.out.println("Total times for play: ");
+		System.out.println(times);
+	}
+	
+	
+	static void factor2(int N) {
+		System.out.println("The factors are: ");
+		String k = "1 ";
+		for (int i = 2; i<=N/2; i++) {
+			if (N%i == 0) {
+				k += i; 
+				k += " ";
+			}
+		}
+		System.out.print(k);
+}
+	
 }
