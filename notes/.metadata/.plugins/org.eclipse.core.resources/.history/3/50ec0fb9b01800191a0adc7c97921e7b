@@ -1,0 +1,28 @@
+package function_module;
+
+public class test_function {
+	/*
+	 * Methods inside the class
+	 */
+	public static void swap(int a, int b){
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
+	public static void main(String[] args){ //Standard way to define method "main"
+		/*
+		 * Function: static methods in java ---> separate the task, reuse codes
+		 * 
+		 * public: accessible to programs outside the class
+		 * void: type of the function (return type)
+		 * static: this function is stable?...
+		 * parameters: arrays can be transferred directly to a function
+		 * the location of the function doesn't affect its functionality
+		 * 
+		 */
+		int a = 2;
+		int b = 3;
+		swap(a,b);
+		System.out.println(a + " " + b);
+	}
+}

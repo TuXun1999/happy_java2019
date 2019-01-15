@@ -34,8 +34,16 @@ public class test_list {
 		//Part IV: exs
 		//ex3();
 		
-		//Part V: 
-		shuffle();
+		//Part V: shuffling
+		//shuffle();
+		
+		//Part VI: matrix operations
+		//matrix_multi();
+		//tran_matrix();
+		
+		//Part VII: search
+		//search_array();
+		search_matrix();
 	
 	}
 	
@@ -242,4 +250,102 @@ public class test_list {
 		}
 		
 	}
+	
+	
+	static void matrix_multi(){
+		int N = 3;
+		double[][] a = {{.7, .2 , .1},{.3, .6, .1},{.5, .4, .1}};
+		double[][] b = {{.8, .3, .5},{.1 , .4, .1},{.1 , .3 , .4}};
+		double[][] c = new double[N][N];
+		for(int i = 0; i < N; i ++){
+			for (int j = 0; j < N; j ++){
+				double sum = 0;
+				for (int s = 0; s < N; s ++){
+					sum += a[i][s] * b[s][j];
+				}
+				c[i][j] = sum;
+			}
+		}
+		
+		for (int i = 0; i < N; i ++){
+			for (int j = 0; j < N; j++){
+				System.out.printf("%.2f\t", c[i][j]);
+				if (j == N - 1){
+					System.out.println();
+				}
+			}
+		}
+	}
+	
+	
+	static void tran_matrix(){
+		int N = 3;
+		int M = 4;
+		double[][] a = {{33, 15, 14},{3, 55, 21},{0, 17, 12},{7, 0, 15}};
+		double[][] a_T = new double[N][M];
+		for(int i = 0; i < M; i ++){
+			for(int j = 0; j < N; j++){
+				a_T[N-1-j][i] = a[i][j];
+			}
+		}
+		for(int i = 0; i < N; i ++){
+			for(int j = 0; j < M; j++){
+				System.out.print(a_T[i][j] + "\t");
+				if (j == M - 1)
+					System.out.println();
+			}
+		}
+		
+	}
+	
+	static void search_array(){
+		double[] array = {2,3,4,51, 5, 32, 1232};
+		int i;
+		double ele = 51;
+		for (i = 0; i< array.length; i++){
+			if(array[i] == ele)
+				break;
+		}
+		/*
+		 * Another method to jump out of the loop is to use find == false in
+		 * the brackets; 
+		 */
+		if (i < array.length){
+			System.out.println("The element " + ele + " is in the array");
+			System.out.println("The location of it is " + i);
+		}
+		else{
+			System.out.println("The element is not in the array");
+		}
+	}
+	
+	
+	static void search_matrix(){
+		double[][] mat = {{2,1,3, 4},{21,45, 5, 7},{9, 10,1.5,6}};
+		int rows = mat.length;
+		int columns = mat[0].length;
+		boolean exist = false;
+		double target = 89;
+		int i;
+		int j=0;
+		for (i = 0;  i < rows; i++){
+			for (j = 0; j < columns; j++){
+				if(mat[i][j] == target){
+					exist = true;
+					break;
+					}
+			}
+			if (exist){
+				break;
+				}
+			}
+		if(exist){
+		System.out.println("The element is in the matrix");
+		System.out.println("The location is " + i + " " + j);
+		}
+		else{
+			System.out.println("The element is not in the matrix");
+		}
+	}
+	
 }
