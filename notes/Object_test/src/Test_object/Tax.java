@@ -7,28 +7,38 @@ public class Tax {
 		double salaryDara = 65000;
 		double bonusDara = 4850;
 		
-		Employee Dara = new Employee(salaryDara, bonusDara);
+		Employee Dara = new Employee(salaryDara, bonusDara, "Dara");
 	
-		System.out.println("THe tax for Dara is: " + Dara.TaxCal());
+		Dara.print_tax();
 		
 		/*
 		 * For public attributes, they can be changed directly
+		 * (if you don't build the attributes in the first place,
+		 * initialize them in the program!!)   
 		 */
+		
+		
+		/*
 		Dara.salary= 2000;
 		Dara.bonus = 50;
-		System.out.println("THe tax for Dara is: " + Dara.TaxCal());
+		Dara.print_tax();*/
+		
+		Dara.change_bonus (90);
+		Dara.print_tax();
 		
 		double salaryElaya = 99000;
 		double bonusElaya = 4820;
 		
-		Employee Elaya = new Employee(salaryElaya, bonusElaya);
-		System.out.println("THe tax for Elaya is: " + Elaya.TaxCal());
+		Employee Elaya = new Employee(salaryElaya, bonusElaya, "Elaya");
+		Elaya.print_tax();
+		
 		
 		double salaryBahrat = 45000;
 		double bonusBahrat = 3820;
 		
-		Employee Bahrat = new Employee(salaryBahrat, bonusBahrat);
-		System.out.println("THe tax for Bahrat is: " + Bahrat.TaxCal());
+		Employee Bahrat = new Employee(salaryBahrat, bonusBahrat, "Bahrat");
+		Bahrat.print_tax();
+		System.out.println("The total tax: " + (Dara.TaxCal()+Elaya.TaxCal()+Bahrat.TaxCal()));
 	}
 
 }

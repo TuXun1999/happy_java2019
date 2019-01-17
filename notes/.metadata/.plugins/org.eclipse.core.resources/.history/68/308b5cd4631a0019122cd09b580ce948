@@ -1,0 +1,17 @@
+package Test_object;
+
+public class Company {
+	private int time;
+	
+	Employee Dara;
+	
+	
+	public void setTime(int i){
+		this.time = i; 
+	}
+	public Company(int i){
+		this.time = i;
+		this.Dara =Employee
+	}
+
+}

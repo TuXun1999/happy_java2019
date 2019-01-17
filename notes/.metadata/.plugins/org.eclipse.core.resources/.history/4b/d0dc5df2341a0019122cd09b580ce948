@@ -1,0 +1,32 @@
+package Test_object;
+
+public class Employee {
+	Employee(double mysalary, double bonus){
+		salary = mysalary;
+		this.bonus = bonus; 
+		//------> this keyword means the variable "bonus" is from inside the class, not outside the class !!!
+	}
+	/*
+	 * If you don't use the constructor to initialize the attributes
+	 * you should initialize them in the main function; 
+	 */
+	double salary;
+	double bonus;
+	static double percent = 0.2; //Any instance shares the static attribute; only for this class
+	
+	public double TaxCal(){ //A method inside a class; it can be used for any instance
+		double tax = (salary + bonus) * percent;
+		return tax;
+	}
+	
+	public static void set_percent(double a){
+		percent = a;
+		
+	}
+	public static void change_bonus(double bonus){
+		//A little test about this keyword
+		this.bonus = bonus;
+	}
+	
+
+}
