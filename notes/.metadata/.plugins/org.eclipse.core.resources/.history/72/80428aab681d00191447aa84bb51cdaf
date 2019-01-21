@@ -1,0 +1,21 @@
+package test_super;
+
+public class test_super {
+	/*
+	 * When you use super, it is equal to call the constructor of the 
+	 * parent class, 
+	 * so your initial value to all data will be overwritten
+	 * by the constructor;
+	 * if you use super.methodName(), it will call the method in the super class
+	 */
+	public static void main(String[] args){
+		Animal a = new Animal();
+		Dog b = new Dog();
+		a.eat();
+		b.eat();
+		b.test_eat();
+		a.print_color();
+		b.print_color();
+	}
+
+}

@@ -17,6 +17,10 @@ public class volume_surface {
 		System.out.println("Parameters for the cube: " + a + " " + b + " " + c);
 		System.out.println("Volume: " + volume.vol(a, b, c));
 		System.out.println("Surface: " + surface.sur(a, b, c));
+		String comparison_v = (volume.vol(r,h) > volume.vol(a,b,c))? "Cylinder is bigger" : "Cube is bigger";
+		String comparison_s = (surface.sur(r,h) > surface.sur(a,b,c))?"Cylinder has more surface" : "Cube has more surface";
+		System.out.println(comparison_v);
+		System.out.println(comparison_s);
 		/*As the example shows,
 		 * to use the method of the class within the same package
 		 * just use it directly

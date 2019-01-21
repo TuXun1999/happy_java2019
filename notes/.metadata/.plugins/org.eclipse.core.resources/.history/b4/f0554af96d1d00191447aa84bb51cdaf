@@ -1,0 +1,19 @@
+package test_inheritance;
+
+public class Calculation {
+	/*
+	 * Superclass
+	 */
+	int a, b;
+	public Calculation(int a, int b){
+		this.a = a;
+		this.b = b;
+	}
+	public int remains(){
+		return (a%b);
+	}
+	public int substraction(){
+		return (a - b);
+	}
+
+}

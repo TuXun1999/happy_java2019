@@ -1,0 +1,8 @@
+package test_interface;
+
+public class add implements BasicMath{
+	
+	public double addition(double a, double b){
+		return (a + b);
+	}
+}

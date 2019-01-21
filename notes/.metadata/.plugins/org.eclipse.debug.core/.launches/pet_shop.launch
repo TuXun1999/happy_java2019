@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Object_test/src/pet_shop/pet_shop.java"/>
+<listEntry value="/polymorphism/src/polymorphism/overloading.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pet_shop.pet_shop"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Object_test"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="polymorphism.overloading"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="polymorphism"/>
 </launchConfiguration>

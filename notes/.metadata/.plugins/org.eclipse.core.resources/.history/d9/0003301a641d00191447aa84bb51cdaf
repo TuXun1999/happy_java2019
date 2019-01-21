@@ -1,0 +1,11 @@
+package test_inheritance;
+
+public class Calculation {
+	/*
+	 * Superclass
+	 */
+	public int remains(int a, int b){
+		return (a%b);
+	}
+
+}

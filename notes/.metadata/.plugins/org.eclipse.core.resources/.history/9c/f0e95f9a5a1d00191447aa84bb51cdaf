@@ -1,0 +1,8 @@
+package test_inheritance;
+
+public class test_inheritance {
+	public static void main(String[] args){
+		Calculation a = new Calculation();
+	}
+
+}

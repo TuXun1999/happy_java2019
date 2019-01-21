@@ -1,0 +1,5 @@
+package test_abstract;
+
+public abstract class CalculationMethods {
+
+}
