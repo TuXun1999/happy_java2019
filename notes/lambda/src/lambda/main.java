@@ -1,0 +1,49 @@
+package lambda;
+
+public class main {
+	/*
+	public static void main(String[] args){
+		
+		printLambda(s -> s.length());
+	}
+	
+	public static void printLambda(StringLength l){
+		System.out.println(l.getLength("Hello, world"));
+	}
+	
+	interface StringLength {
+		int getLength(String s);
+	}
+	*/
+	
+	/*
+	 * Construct an interface here
+	 */
+	@FunctionalInterface  //-----> standard way to tell the developer not to add more methods to the interface
+	interface testLambda{
+		public void perform(String s);
+	}
+	/*
+	 *to use the interface, we have to create a class 
+	 *to implement it, and override the method
+	 *
+	 * a easier way is to use lambda expression
+	 */
+	public static void main(String[] args){
+		String s = "Hello, world";
+		
+		/*
+		 * "Implement" the interface in a variable "test"
+		 * use the lambda expression to override the abstract method
+		 */
+		testLambda test = (String a) -> {
+			System.out.println(a);
+		};  //compiler will override the method automatically
+		
+		/*
+		 * lambda expression requires only one method be in the interface
+		 */
+		test.perform(s); //After overriding the abstract method, just call it directly
+	}
+	
+}

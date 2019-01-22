@@ -1,0 +1,39 @@
+package hashing;
+
+import java.util.HashSet;
+
+
+public class hash {
+	public static void main(String[] args){
+		/*
+		 * Hash set ---> HashSet is using a hash algorithm to store data
+		 * in position related to data itself from a set
+		 * 
+		 * 
+		 * 
+		 * Set setA = new HashSet();
+		 * String element = "element";
+		 * 
+		 * method: 
+		 * add: add an element
+		 * contains: check whether the element is contained
+		 * 
+		 * 
+		 * You can also declare a HashSet using a generic type
+		 * like, Set<Integer> (A set only containing integers)
+		 * 
+		 */
+		HashSet test =  new HashSet<Integer>();
+		test.add(11);
+		test.add(24);
+		test.add(85);
+		test.add(47);
+		test.add(44);
+		test.add(46);
+		test.add("True");
+		System.out.println(test);
+		
+		
+	}
+
+}

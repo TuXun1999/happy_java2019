@@ -1,0 +1,12 @@
+package Datatype;
+
+public class TestCom {
+	public static <T extends Comparable<T>> boolean greater(T x, T y){
+		if (x.compareTo(y) > 0){
+			return true;
+		}
+		else
+			return false; 
+	}
+
+}

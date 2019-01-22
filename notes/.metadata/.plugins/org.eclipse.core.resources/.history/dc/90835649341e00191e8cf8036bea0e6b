@@ -1,0 +1,13 @@
+package Datatype;
+
+public class Datatype {
+	public void main(String[] args){
+		Currency heap1 = new Currency("Euro", 1);
+		Currency heap2 = new Currency("USD", 1/1.06);
+		Currency heap3 = new Currency("Pound", 1/0.96);
+		Currency heap4 = new Currency("Yen", 1/113.96);
+		
+		System.out.println("5 Euro --> USD: " + heap1.exchange(5, heap2));
+	}
+
+}

@@ -1,0 +1,16 @@
+package lambda;
+
+public class main {
+	public static void main(String[] args){
+		
+		printLambda(s -> s.length());
+	}
+	
+	public static void printLambda(StringLength l){
+		System.out.println(l.getLength("Hello, world"));
+	}
+	
+	interface StringLength {
+		int getLength(String s);
+	}
+}

@@ -1,0 +1,24 @@
+package Complex;
+
+public class complex {
+	double Re;
+	double Im;
+	
+	public complex(double Re, double Im){
+		this.Re = Re;
+		this.Im = Im;
+	}
+	
+	public void show(){
+		if (Im != 0)
+			System.out.println(Re + " + " + Im + "i");
+		else{
+			System.out.println(Re);
+		}
+	}
+	
+	public void add(complex ano){
+		
+	}
+
+}
