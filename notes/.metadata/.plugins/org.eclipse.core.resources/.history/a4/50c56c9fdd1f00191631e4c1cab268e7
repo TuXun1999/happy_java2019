@@ -1,0 +1,26 @@
+package sorting_and_searching;
+
+public class bubble {
+	public static void sort(int[] a){
+		// It is a little like a dynamic pointer... the array is dynamic, and will be changed even outside the function
+		
+		/*
+		 * Bubble sort: for 0 to i -1, switch the two elements if they are not in
+		 * the right order; 
+		 * in this way, push the maximum number to the rightest
+		 * 
+		 * repeat the process for the rest elements, until the order is correct
+		 */
+		
+	for(int i = a.length; i >= 2; i--){
+		for(int j=0; j < i-1; j++ ){
+			if(a[j] >= a[j+1]){
+				int tmp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = tmp;
+			}
+		}
+		}
+		
+	}
+}

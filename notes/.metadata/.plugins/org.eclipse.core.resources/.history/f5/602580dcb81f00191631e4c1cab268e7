@@ -1,0 +1,16 @@
+package sorting_and_searching;
+
+public class bubble {
+	public static int[] sort(int[] a){
+	for(int i = 1; i <a.length; i++){
+		for(int j=0; i < i-1; i++ ){
+			if(a[i] >= a[i+1]){
+				int tmp = a[i];
+				a[i] = a[i+1];
+				a[i+1] = tmp;
+			}
+		}
+		}
+		return a;
+	}
+}

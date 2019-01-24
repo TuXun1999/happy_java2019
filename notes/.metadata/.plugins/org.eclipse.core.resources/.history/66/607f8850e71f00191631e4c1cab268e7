@@ -1,0 +1,11 @@
+package Shippment;
+
+public class box extends item{
+	ArrayList<Good> goods;
+	public box(double height, double length, double width){
+		super(height, length, width);
+		this.goods = new Good
+		
+	}
+
+}

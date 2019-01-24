@@ -1,0 +1,8 @@
+package Shippment;
+
+public class Shippment {
+	public static void main(String[] args){
+		
+	}
+
+}

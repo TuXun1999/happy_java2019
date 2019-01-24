@@ -1,0 +1,19 @@
+package sorting_and_searching;
+
+public class main_class {
+	public static void main(String[] args){
+		/*
+		 * In Google, the searching process is very fast...
+		 * It indicates that searching algorithm may be quite complex and effective
+		 */
+		
+		/*
+		 * Bubble sort: for 0 to i -1, switch the two elements if they are not in
+		 * the right order; 
+		 */
+		int[] a = {15,4,2,3,1,10,2};
+		bubble.sort(a);
+		System.out.println(a);
+	}
+
+}
