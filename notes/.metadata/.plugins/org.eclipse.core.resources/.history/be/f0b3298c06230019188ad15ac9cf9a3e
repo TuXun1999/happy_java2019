@@ -1,0 +1,25 @@
+package test_file;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class test_file {
+	public static void main(String[] args){
+		try{
+		File test = new File("/homes/lvb/lvb-104/Desktop/numbr.txt");
+		Scanner bi = new Scanner(test);
+		while(bi.hasNextInt()){
+			System.out.println(bi.nextInt());
+		}
+		bi.close();
+		}
+		catch (Exception e){
+			System.out.println("File Not Found");
+			System.exit(0);
+		}
+		
+		
+	}
+	
+
+}

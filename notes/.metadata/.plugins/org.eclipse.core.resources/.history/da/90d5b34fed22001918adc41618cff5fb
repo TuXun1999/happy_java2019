@@ -1,0 +1,27 @@
+package IO2;
+import java.awt.Color;
+import IO.StdDraw;
+
+public class IO2 {
+	public static void main(String[] args){
+		StdDraw.setCanvasSize(800, 800);
+		int i=0;
+		while(true){
+			double x = StdDraw.mouseX();
+			double y = StdDraw.mouseY();
+			StdDraw.filledCircle(x, y, 0.2);
+			if(StdDraw.mousePressed()){
+				if(i%2 == 0){
+					StdDraw.setPenColor(Color.BLUE);
+				}
+				else{
+					StdDraw.setPenColor(Color.RED);
+				}
+			}
+			StdDraw.show(150);
+			StdDraw.clear();
+			i++;
+		}
+	}
+
+}

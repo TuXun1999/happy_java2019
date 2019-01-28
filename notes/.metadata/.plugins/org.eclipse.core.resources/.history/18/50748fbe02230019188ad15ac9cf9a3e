@@ -1,0 +1,10 @@
+package Color;
+import IO.StdDraw;
+import java.awt.Color;
+
+public class Color {
+	public static void main(String[] args){
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+package test_file;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class test_file {
+	public static void main(String[] args){
+		try{
+		File test = new File("/homes/lvb/lvb-104/Desktop/number.txt");
+		Scanner bi = new Scanner(test);
+		ArrayList arr = new ArrayList();
+		while(bi.hasNextInt()){//Numbers have to be divided by " " or "\n", or it will be accepted as something not an integer
+			arr.add(bi.nextInt());
+			
+		}
+		for(Object temp: arr){
+			System.out.println(temp);
+		}
+		bi.close();
+		}
+		catch (Exception e){
+			System.out.println("File Not Found");
+			System.exit(0);
+		}
+		
+		
+	}
+	
+
+}

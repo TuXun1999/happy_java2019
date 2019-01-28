@@ -1,0 +1,56 @@
+package IO;
+
+public class IO {
+	public static void main(String[] args){
+		/*
+		 * Test printf
+		 * 
+		 * int f = 525552;
+		 
+		
+		System.out.println(Math.PI);
+		System.out.println();
+		
+		System.out.printf("Total is: $%,.2f\n", Math.PI);
+		
+		System.out.printf("Total: %-10.3f: \n", Math.PI);
+		
+		System.out.printf("%8d \n", f);
+		System.out.printf("%11.10s\n",  Math.PI);
+		String s = "Hello World";
+		System.out.printf("The string object %s is at hash code %h%n", s,s);
+		*/
+		
+		//Change the size of the canvas
+		StdDraw.setCanvasSize(500, 1000);
+		
+		//Set the scale of the canvas
+		StdDraw.setXscale(-1,1);
+		StdDraw.setYscale(-2,2);
+		
+		/*
+		//Try to draw a circle ---> 0.5, 0.5: position-x, position-y; 0.25: radius
+		StdDraw.filledCircle(0.5, 0.5, 0.25);
+		
+		//Try to draw out a triangle by three lines
+		StdDraw.point(0,0);
+		StdDraw.point(0.2,0.3);
+		StdDraw.point(0.1, 0.7);
+		
+		StdDraw.line(0, 0, 0.2, 0.3);
+		StdDraw.line(0.2,0.3,0.1,0.7);
+		StdDraw.line(0.1,0.7,0,0);
+		*/
+		int grid = 10000;
+		for(int i = 0; i < grid; i++){
+			StdDraw.point(-1 + i * (2.0/grid),f(-1 + i * (2.0/grid)) );
+			StdDraw.line(-1 + i * (2.0/grid), f(-1 + i * (2.0/grid)), -1 + (i+1) * (2.0/grid), f(-1 + (i+1) * (2.0/grid)));
+		}
+		
+	}
+	
+	public static double f(double x){
+		return (-1*x*x-2*x + 0.5);
+	}
+
+}
