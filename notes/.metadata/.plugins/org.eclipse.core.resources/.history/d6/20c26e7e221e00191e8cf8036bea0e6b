@@ -1,8 +1,0 @@
-package ex1_sol;
-
-public class pentagonVolume {
-	public double bottomarea(double a, double b){
-		return (5*a*b*0.5);
-	}
-
-}

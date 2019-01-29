@@ -25,7 +25,7 @@ public class test_file {
 			
 		}
 		for(Object temp: arr){
-			out.write(temp.toString());//Write the character into the file
+			out.write(temp.toString( ));//Write the character into the file
 			//If you don't use toString, the integers will be considered as ascii codes
 			out.write("\n");
 		}

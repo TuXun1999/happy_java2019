@@ -11,9 +11,10 @@ public class main_class {
 		
 		
 		Integer[] a = {15,4,2,3,1,10,2,11};
+		int[] d = {15,4,2,3,1,10,2,11};
 		String[] a2 = {"John", "cat", "bubble", "apple", "Pear", "Apple", "Amen"};
-		bubble.sort(a);
-		
+		//bubble.sort(a);
+		/*
 		for(int i = 0; i < a.length; i++){
 			System.out.print(a[i] + "\t");
 		}
@@ -27,6 +28,8 @@ public class main_class {
 		}
 		System.out.println();
 		System.out.println("3 is at the position: " + binarySearch.search(b,4));
+		*/
+		merge.sort(d);
 	}
 
 }

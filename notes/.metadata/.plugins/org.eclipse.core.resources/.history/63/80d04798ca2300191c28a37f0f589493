@@ -1,0 +1,7 @@
+package company_main;
+
+public class company_main {
+	public static void main(String[] args){
+		
+	}
+}
