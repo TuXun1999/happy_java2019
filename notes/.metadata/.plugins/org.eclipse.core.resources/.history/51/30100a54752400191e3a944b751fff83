@@ -1,0 +1,33 @@
+package PingPong;
+
+import java.awt.Color;
+
+public class Block {
+	private double centerx;
+	private double centery;
+	
+	private double height;
+	private double width;
+	
+	public Block(double x, double y, double h, double w){
+		this.centerx = x;
+		this.centery = y;
+		
+		this.height = h;
+		this.width = w;
+	}
+	
+	public void drawme(){
+		StdDraw.line(centerx - 0.5*width, centerx - 0.5*width, centery + 0.5*height, centery - 0.5*height);
+		StdDraw.line(centerx - 0.5*width, centerx + 0.5*width, centery - 0.5*height, centery - 0.5*height);
+		StdDraw.line(centerx + 0.5*width, centerx + 0.5*width, centery - 0.5*height, centery + 0.5*height);
+		StdDraw.line(centerx + 0.5*width, centerx - 0.5*width, centery + 0.5*height, centery + 0.5*height);
+		
+		StdDraw.setPenColor(Color.yellow);
+		double[] xs = {centerx - 0.5*width, centerx - 0.5*width, centerx + 0.5*width, centerx + 0.5*width};
+		double[] ys = {centery + 0.5*height, centery - 0.5*height, centery - 0.5*height, centery + 0.5*height};
+		StdDraw.filledPolygon(xs, ys);
+	}
+	
+
+}

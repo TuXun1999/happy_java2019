@@ -1,0 +1,8 @@
+package Test_inheritance;
+
+public class A {
+	public String name;
+	A(){
+		this.name = "One";
+	}
+}

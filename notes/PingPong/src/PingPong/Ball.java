@@ -67,5 +67,13 @@ public class Ball {
 		centerx += incre_x;
 		centery += incre_y;
 	}
+	
+	public void cd_x(){
+		incre_x *= -1;
+	}
+	
+	public void cd_y(){
+		incre_y *= -1;
+	}
 
 }

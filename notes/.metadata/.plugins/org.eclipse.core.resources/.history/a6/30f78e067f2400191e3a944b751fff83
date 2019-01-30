@@ -1,0 +1,10 @@
+package Test_inheritance;
+
+public class B extends A{
+	public String name;
+	B(){
+		super();
+		this.name = "Two";
+	}
+
+}

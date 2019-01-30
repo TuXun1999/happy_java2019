@@ -1,0 +1,10 @@
+package Test_inheritance;
+
+public class B extends A{
+	
+	B(){
+		super();
+		//this.name = "Two";
+	}
+
+}

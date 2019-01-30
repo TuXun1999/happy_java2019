@@ -1,0 +1,166 @@
+package PingPong;
+
+import java.awt.Color;
+import java.util.ArrayList;
+
+public class play_pingpong {
+	public static void main(String[] args){
+		StdDraw.setCanvasSize(600, 600);
+		
+		double size = 10;
+		StdDraw.setXscale(-1 * size, size);
+		StdDraw.setYscale(-1*size, size);
+		
+		
+		
+		double plate_width = 4;
+		double plate_height = 1;
+		double[] y = {plate_height-size, size*-1, size*-1, plate_height-size};
+		Ball myBall = new Ball(0.0, 0.0,  0.5,  0.5,  0.25);
+		
+		int scores=0;
+		ArrayList<Block> blocks = new ArrayList<Block>();
+		for(int i = 0; i < 3; i++){
+			Block e = new Block(-size + i*5, 5, 1, 4);
+			blocks.add(e);
+		}
+		
+		while(true){
+			//StdDraw.text(0.0, 0.0, "Scores: "+scores);
+			double mouseX = StdDraw.mouseX();
+			double centerx;
+			
+			//The plate cannot go outside the horizon
+			if(mouseX >= -size + plate_width*0.5 && mouseX <= size - plate_width*0.5){
+				centerx = mouseX;
+			}
+			else if(mouseX < -size + plate_width*0.5){
+				centerx = -size + plate_width*0.5;
+			}
+			else{
+				centerx = size - plate_width*0.5;
+			}
+			
+			
+			double[] x = 
+					new double[]{
+					centerx - plate_width*0.5, 
+					centerx - plate_width*0.5, 
+					centerx + plate_width*0.5, 
+					centerx + plate_width*0.5};
+			
+			
+			
+			myBall.check_border(size, plate_height);
+			
+			
+			/*
+			 * Check the collision between the ball and the blocks
+			 */
+			try{
+				for(int i = 0; i < blocks.size(); i++){
+					Block tb = blocks.get(i);
+					tb.drawme();
+					if(iscollided(myBall, tb) == 0 || iscollided(myBall, tb) == 2){
+						myBall.cd_x();
+						blocks.remove(i);
+						myBall.drawme();
+						StdDraw.show(1000000);
+						i--;
+					}
+					else if (iscollided(myBall, tb) == 1 || iscollided(myBall, tb) == 3){
+						myBall.cd_y();
+						blocks.remove(i);
+						i--;
+					}
+				}
+			}
+			catch (Exception e){
+				
+			}
+			myBall.update();
+			
+			myBall.drawme();
+			
+			StdDraw.setPenColor(Color.BLUE);
+			
+			StdDraw.filledPolygon(x, y);
+			if(hit_plate(myBall, size, plate_width, plate_height, centerx))
+				scores += 10;
+			
+			if(isdead(myBall, size, plate_width, plate_height, centerx)){
+				break;
+			}
+			StdDraw.show(20);
+			StdDraw.clear();
+		}
+		StdDraw.setPenColor(Color.BLACK);
+		System.out.println("Test");
+		StdDraw.text(0.0, 0.0, "Scores: "+scores);
+		StdDraw.show(1);
+	}
+	
+	public static boolean hit_plate(Ball b, double size, double width, double h, double x){
+		if (b.getCenterx() >= x-width*0.5&&b.getCenterx() <= x + width*0.5&&b.getCentery()-b.getRadius() == -size+h)
+			return true;
+		else
+			return false;
+	}
+	
+	public static boolean isdead(Ball b, double size, double width, double h, double x){
+		if (b.getCenterx() < x-width*0.5||b.getCenterx() > x + width*0.5){
+			if(b.getCentery()-b.getRadius() > h-size)
+				return false;
+			else{
+				return true;
+			}
+				
+		}
+		else
+			return false;
+			
+	}
+	
+	public static int iscollided(Ball ball, Block block){
+		int res = -1;
+		for(int i = 0; i < 4; i++){
+			if(check_line_ball(ball, block.side(i)[0], block.side(i)[1])){
+				res = i;
+				return res;
+			}
+		}
+		return res;
+	}
+	
+	public static boolean check_line_ball(Ball b, double[] x, double[] y){
+		boolean res = false;
+		if(x[0] == x[1]){
+			if(Math.abs(b.getCenterx() - x[0]) <= b.getRadius()){
+				if(b.getCentery() >= y[0] && b.getCentery() <= y[1])
+					res = true;
+				else if (dist(x[0], y[0],b.getCenterx(),b.getCentery()) <= b.getRadius() || 
+						dist(x[1], y[1], b.getCenterx(), b.getCentery()) <= b.getRadius())
+					res = true;
+			}
+			
+		}
+		else if(y[0] == y[1]){
+			if(Math.abs(b.getCentery() - y[0]) <= b.getRadius()){
+				if(b.getCenterx() >= x[0] && b.getCenterx() <= x[1])
+					res = true;
+				else if (dist(x[0], y[0],b.getCenterx(),b.getCentery()) <= b.getRadius() || 
+						dist(x[1], y[1], b.getCenterx(), b.getCentery()) <= b.getRadius())
+					res = true;
+			}
+			
+		}
+		return res;
+	}
+	
+	
+	public static double dist(double x0,double y0,double x1,double y1){
+		return (Math.sqrt((x0-x1)*(x0-x1) + (y0 - y1) * (y0 - y1)));
+	}
+}
+
+

@@ -1,0 +1,11 @@
+package Test_inheritance;
+
+public class main_class {
+	public static void main(String[] args){
+		A k = new A();
+		B l = new B();
+		System.out.println(k.name);
+		System.out.println(l.name);
+	}
+
+}

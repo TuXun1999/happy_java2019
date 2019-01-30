@@ -44,6 +44,15 @@ public class main {
 		 * lambda expression requires only one method be in the interface
 		 */
 		test.perform(s); //After overriding the abstract method, just call it directly
+		
+		/* here, you don't need to initialize b[i] for each i...the compiler will do it automatically
+		int[][] b =new int[3][4];
+		for(int i = 0; i <b.length; i++){
+			for(int j =0; j<b[0].length; j++){
+				System.out.println(b[i][j]);
+			}
+		}
+		*/
 	}
 	
 }

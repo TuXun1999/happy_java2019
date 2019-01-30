@@ -23,6 +23,7 @@ public class Tax {
 		Dara.bonus = 50;
 		Dara.print_tax();*/
 		
+		//Dara.set_percent(0.5); ----> you'd better not to do this
 		Dara.change_bonus (90);
 		Dara.print_tax();
 		
